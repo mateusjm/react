@@ -1,4 +1,4 @@
-const CairDetails = ({color, km, brand, newCar}) => {
+const CarDetails = ({color, km, brand, newCar}) => {
   return (
     <div>
       <h2>Detalhes do carro:</h2>
@@ -12,4 +12,4 @@ const CairDetails = ({color, km, brand, newCar}) => {
   )
 }
 
-export default CairDetails
+export default CarDetails
