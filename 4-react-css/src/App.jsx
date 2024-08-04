@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import './App.css'
+
+// importando componentes
 import MyComponent from './components/MyComponent'
+import Title from './components/Title'
 
 function App() {
 
@@ -28,6 +31,9 @@ function App() {
         <button onClick={() => setN(15)}>Rosa</button>
         {/* Classe dinâmica */}
         <h2 className={redTitle ? ('red-title'):('title')}>Esse título vai ter classe dinâmica</h2>
+        {/* CSS Modules */}
+        <Title/>
+        <h2 className='my_title'>Testando</h2>
       </div>
     </>
   )
