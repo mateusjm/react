@@ -16,19 +16,34 @@
       "price": 29.9
     },
     {
-      "id": "9dc5",
+      "id": "4",
       "name": "Mesa",
       "price": "100"
     },
     {
-      "id": "4b07",
+      "id": "5",
       "name": "Capa de chuva",
       "price": "300"
     },
     {
-      "id": "59a3",
+      "id": "6",
       "name": "Cobertor",
       "price": "25"
+    },
+    {
+      "id": "7",
+      "name": "Mouse",
+      "price": "130"
+    },
+    {
+      "id": "7ce2",
+      "name": "Filme",
+      "price": "30"
+    },
+    {
+      "id": "3b04",
+      "name": "Pipoca",
+      "price": "7"
     }
   ]
 }

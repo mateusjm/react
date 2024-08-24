@@ -1,16 +1,23 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 
+// 4 - custom hook
+import { useFetch } from './hooks/useFetch'
+
 const url = 'http://localhost:3000/products'
 
 function App() {
 
   const [products, setProducts] = useState([])
+
+  // 4- custom
+  const {data: items, httpConfig, loading} = useFetch(url)
+
   const [name, setName] = useState('')
   const [price, setPrice] = useState('')
 
   // 1- resgatando dados
-  useEffect(() => {
+  /* useEffect(() => {
     async function fetchData() {
       const res = await fetch(url)
       const data = await res.json()
@@ -20,7 +27,7 @@ function App() {
     }
 
     fetchData()
-  }, [])
+  }, []) */
 
   // 2 - adicionando produtos
   const handleSubmit = async (e) => {
@@ -32,7 +39,7 @@ function App() {
     }
 
     // configurando um objeto para determinar POST, GET por padrão
-    const res = await fetch(url, {
+    /* const res = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -43,7 +50,10 @@ function App() {
     // 3 - carregamento dinâmico
     const addedProduct = await res.json()
 
-    setProducts((prevProducts)=> [...prevProducts, addedProduct])
+    setProducts((prevProducts)=> [...prevProducts, addedProduct]) */
+
+    // 5- refatorando post
+    httpConfig(product, 'POST')
 
     setName('')
     setPrice('')
@@ -53,7 +63,9 @@ function App() {
     <>
       <div className='App'>
         <h1>Lista de produtos</h1>
-        <ul>{products.map((product)=> (
+        {/* 6- loading */}
+        {loading && <p>Carregando dados...</p>}
+        <ul>{items && items.map((product)=> (
           <li key={product.id}>
             {product.name} - R$: {product.price}
           </li>
